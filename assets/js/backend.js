@@ -1,6 +1,6 @@
 const button = document.getElementById("checkout-button")
 button.addEventListener("click", () => {
-  fetch("https://281d-185-107-80-99.ngrok-free.app/create-checkout-session", {
+  fetch("https://promptgenius-backend.onrender.com/create-checkout-session", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
