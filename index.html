@@ -1,2741 +1,853 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-     PromptGenius | Supercharge your chatGPT
-    </title>
-    <link
-      rel="shortcut icon"
-      href="assets/images/favicon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
 
-    <!-- ==== WOW JS ==== -->
-    <script src="assets/js/wow.min.js"></script>
-   
-    <script>
-      new WOW().init();
-    </script>
-  </head>
-  <body>
-    <!-- ====== Navbar Section Start -->
-    <div
-      class="ud-header absolute top-0 left-0 z-40 flex w-full items-center bg-transparent"
-    >
-      <div class="container">
-        <div class="relative -mx-4 flex items-center justify-between">
-          <div class="w-60 max-w-full px-4">
-            <a href="index.html" class="navbar-logo block w-full py-5">
-              <img
-                src="assets/images/logo/color_bg_logo.png"
-                alt="logo"
-                class="header-logo w-full"
-              />
-            </a>
-          </div>
-          <div class="flex w-full items-center justify-end px-4">
-            <div>
-              <button
-                id="navbarToggler"
-                class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-              >
-                <span
-                  class="relative my-[6px] block h-[2px] w-[30px] bg-white"
-                ></span>
-                <span
-                  class="relative my-[6px] block h-[2px] w-[30px] bg-white"
-                ></span>
-                <span
-                  class="relative my-[6px] block h-[2px] w-[30px] bg-white"
-                ></span>
-              </button>
-              <nav
-                id="navbarCollapse"
-                class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:px-4 lg:shadow-none xl:px-6"
-              >
-                <ul class="blcok lg:flex">
-                  <li class="group relative">
-                    <a
-                      href="#home"
-                      class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li class="group relative">
-                    <a
-                      href="#about"
-                      class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li class="group relative">
-                    <a
-                      href="#pricing"
-                      class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                  <li class="group relative">
-                    <a
-                      href="#FAQ"
-                      class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
-                    >
-                      FAQ
-                    </a>
-                  </li>
-                  <li class="group relative">
-                    <a
-                      href="#contact"
-                      class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                  <!-- <li class="submenu-item group relative">
-                    <a
-                      href="javascript:void(0)"
-                      class="relative mx-8 flex py-2 text-base text-dark after:absolute after:right-1 after:top-1/2 after:mt-[-2px] after:h-2 after:w-2 after:-translate-y-1/2 after:rotate-45 after:border-b-2 after:border-r-2 after:border-current group-hover:text-primary lg:mr-0 lg:ml-8 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 lg:text-white lg:after:right-0 lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12"
-                    >
-                      Pages
-                    </a>
-                    <div
-                      class="submenu relative top-full left-0 hidden w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full"
-                    >
-                      <a
-                        href="about.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        About Page
-                      </a>
-                      <a
-                        href="pricing.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        Pricing Page
-                      </a>
-                      <a
-                        href="contact.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        Contact Page
-                      </a>
-                      <a
-                        href="blog-grids.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        Blog Grid Page
-                      </a>
-                      <a
-                        href="blog-details.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        Blog Details Page
-                      </a>
-                      <a
-                        href="signup.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        Sign Up Page
-                      </a>
-                      <a
-                        href="signin.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        Sign In Page
-                      </a>
-                      <a
-                        href="404.html"
-                        class="block rounded py-[10px] px-4 text-sm text-body-color hover:text-primary"
-                      >
-                        404 Page
-                      </a>
-                    </div>
-                  </li> -->
-                </ul>
-              </nav>
-            </div>
-            <!-- <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <a
-                href="signin.html"
-                class="loginBtn py-3 px-7 text-base font-medium text-white hover:opacity-70"
-              >
-                Sign In
-              </a>
-              <a
-                href="signup.html"
-                class="signUpBtn rounded-lg bg-white bg-opacity-20 py-3 px-6 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
-              >
-                Sign Up
-              </a>
-            </div> -->
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    PromptGenius | Supercharge your chatGPT
+  </title>
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+  <!-- ==== WOW JS ==== -->
+  <script src="assets/js/wow.min.js"></script>
+
+  <script>
+    new WOW().init();
+  </script>
+</head>
+
+<body>
+  <!-- ====== Navbar Section Start -->
+  <div class="ud-header absolute top-0 left-0 z-40 flex w-full items-center bg-transparent">
+    <div class="container">
+      <div class="relative -mx-4 flex items-center justify-between">
+        <div class="w-60 max-w-full px-4">
+          <a href="index.html" class="navbar-logo block w-full py-5">
+            <img src="assets/images/logo/color_bg_logo.png" alt="logo" class="header-logo w-full" />
+          </a>
         </div>
-      </div>
-    </div>
-    <!-- ====== Navbar Section End -->
-
-    <!-- ====== Hero Section Start -->
-    <div
-      id="home"
-      class="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]"
-    >
-      <div class="container">
-        <div class="-mx-4 flex flex-wrap items-center">
-          <div class="w-full px-4">
-            <div
-              class="hero-content wow fadeInUp mx-auto max-w-[780px] text-center"
-              data-wow-delay=".2s"
-            >
-              <h1
-                class="mb-8 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug md:text-[45px] md:leading-snug"
-              >
-                Unlock the Full Potential of ChatGPT with AI-Powered Prompt Genius
-              </h1>
-              <p
-                class="mx-auto mb-10 max-w-[600px] text-base text-[#e4e4e4] sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed"
-              >
-              PromptGenius lets you write the best prompt based on your intuition using ai which gives the best result from chatgpt
-              </p>
-              <p
-                class="mx-auto mb-2 max-w-[400px] text-xs text-[#e4e4e4] sm:text-md sm:leading-relaxed md:text-md md:leading-relaxed"
-              >
-              Experience the full power of chatGPT
-              </p>
-              <ul class="mb-5 flex flex-wrap items-center justify-center">
-                <li>
-                  <button id="checkout-button"
-                    class="inline-flex items-center justify-center rounded-lg bg-white py-4 px-6 text-center text-base font-medium text-dark transition duration-300 ease-in-out hover:text-primary hover:shadow-lg sm:px-10"
-                  >
-                    Buy license
-                </button>
-                </li>
-                <!-- <li>
-                  <a
-                    href="https://github.com/tailgrids/play-tailwind"
-                    target="_blank"
-                    class="flex items-center py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:opacity-70 sm:px-10"
-                  >
-                    Star on Github
-                    <span class="pl-2">
-                      <svg
-                        width="20"
-                        height="8"
-                        viewBox="0 0 20 8"
-                        class="fill-current"
-                      >
-                        <path
-                          d="M19.2188 2.90632L17.0625 0.343819C16.875 0.125069 16.5312 0.0938193 16.2812 0.281319C16.0625 0.468819 16.0312 0.812569 16.2188 1.06257L18.25 3.46882H0.9375C0.625 3.46882 0.375 3.71882 0.375 4.03132C0.375 4.34382 0.625 4.59382 0.9375 4.59382H18.25L16.2188 7.00007C16.0312 7.21882 16.0625 7.56257 16.2812 7.78132C16.375 7.87507 16.5 7.90632 16.625 7.90632C16.7812 7.90632 16.9375 7.84382 17.0312 7.71882L19.1875 5.15632C19.75 4.46882 19.75 3.53132 19.2188 2.90632Z"
-                        />
-                      </svg>
-                    </span>
+        <div class="flex w-full items-center justify-end px-4">
+          <div>
+            <button id="navbarToggler"
+              class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden">
+              <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
+              <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
+              <span class="relative my-[6px] block h-[2px] w-[30px] bg-white"></span>
+            </button>
+            <nav id="navbarCollapse"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:py-0 lg:px-4 lg:shadow-none xl:px-6">
+              <ul class="blcok lg:flex">
+                <li class="group relative">
+                  <a href="#home"
+                    class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70">
+                    Home
                   </a>
-                </li> -->
+                </li>
+                <li class="group relative">
+                  <a href="#about"
+                    class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    About
+                  </a>
+                </li>
+                <li class="group relative">
+                  <a href="#pricing"
+                    class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    Pricing
+                  </a>
+                </li>
+                <li class="group relative">
+                  <a href="#FAQ"
+                    class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    FAQ
+                  </a>
+                </li>
+                <li class="group relative">
+                  <a href="#contact"
+                    class="ud-menu-scroll mx-8 flex py-2 text-base text-dark group-hover:text-primary lg:mr-0 lg:ml-7 lg:inline-flex lg:py-6 lg:px-0 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-12">
+                    Contact
+                  </a>
+                </li>
               </ul>
-              <!-- <div class="wow fadeInUp text-center" data-wow-delay=".3s">
-                <img
-                  src="assets/images/hero/brand.svg"
-                  alt="image"
-                  class="mx-auto w-full max-w-[250px] opacity-50 transition duration-300 ease-in-out hover:opacity-100"
-                />
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ====== Navbar Section End -->
+
+  <!-- ====== Hero Section Start -->
+  <div id="home" class="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[140px]">
+    <div class="container">
+      <div class="-mx-4 flex flex-wrap items-center">
+        <div class="w-full px-4">
+          <div class="hero-content wow fadeInUp mx-auto max-w-[780px] text-center" data-wow-delay=".2s">
+            <h1
+              class="mb-8 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug md:text-[45px] md:leading-snug">
+              Unlock the Full Potential of ChatGPT with AI-Powered Prompt Genius
+            </h1>
+            <p
+              class="mx-auto mb-10 max-w-[600px] text-base text-[#e4e4e4] sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed">
+             Write better prompts using AI in chatGPT,with just one click,saving your time and improving your chatGPT experience.
+            </p>
+            <div class="flex flex-wrap mb-5 items-center justify-center"><a
+              class="mr-5"
+                href="https://www.producthunt.com/products/prompt-genius/reviews?utm_source=badge-product_rating&utm_medium=badge&utm_souce=badge-prompt&#0045;genius"
+                target="_blank"><img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/product_rating.svg?product_id=536829&theme=light"
+                  alt="Prompt&#0032;Genius - Explore&#0032;the&#0032;full&#0032;potential&#0032;of&#0032;chatGPT | Product Hunt"
+                  style="width: 242px; height: 108px;" width="242" height="108" /></a>
+                  <a href="https://www.producthunt.com/posts/prompt-genius?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-prompt&#0045;genius" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=397179&theme=light" alt="Prompt&#0032;Genius - Explore&#0032;the&#0032;full&#0032;potential&#0032;of&#0032;ChatGPT | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
+                
+                </div>
+            <p
+              class="mx-auto mb-3 max-w-[410px] text-xs text-[#e4e4e4] sm:text-md sm:leading-relaxed md:text-md md:leading-relaxed">
+              Experience the full power of chatGPT
+            </p>
+            <div class="mb-5 flex flex-wrap items-center justify-center">
+              <div>
+                <!-- <button id="checkout-button"
+                  class="inline-flex items-center justify-center rounded-lg bg-white py-2 px-2 text text-base font-medium text-dark transition duration-300 ease-in-out hover:text-primary hover:shadow-lg sm:px-10 sm:py-5">
+                  <svg aria-hidden="true" class="w-4 h-4 mr-2 -ml-1" fill="currentColor" viewBox="0 0 25 25"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                    </path>
+                  </svg>
+                  <span style=" white-space: nowrap;">Buy License</span>
+                </button>
+              </div>
+              <div>
+                <a href="#_" class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-purple-500 rounded-full shadow-md group">
+                  <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-purple-500 group-hover:translate-x-0 ease">
+                  <svg class="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </span>
+                  <span class="absolute flex items-center justify-center w-full h-full text-purple-500 transition-all duration-300 transform group-hover:translate-x-full ease">Button Text</span>
+                  <span class="relative invisible">Button Text</span>
+                  </a>
+                
+               
               </div> -->
-            </div>
-          </div>
-
-          <div class="w-full px-4 mb-15">
-            <div
-              class="wow fadeInUp relative z-10 mx-auto "
-              data-wow-delay=".25s"
-              style="max-width:900px"
-            >
-              <div class="mt-16">
-                <img
-                  src="assets/images/hero/hero.gif"
-                  alt="hero"
-                  class="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
-                />
-              </div>
-              <div class="absolute bottom-0 -left-9 z-[-1]">
-                <svg
-                  width="134"
-                  height="106"
-                  viewBox="0 0 134 106"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="1.66667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 31 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 103 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 132 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 31 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 103 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 132 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="74.6673"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 74.6673)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 31 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 31 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 103 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 103 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 132 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 132 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 31 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 31 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 103 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 103 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 132 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 132 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 31 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 31 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 103 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 103 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 132 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 132 1.66707)"
-                    fill="white"
-                  />
+              <button type="button" class="  py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+               <span class="px-2">Buy License</span> 
+                <svg class="w-2.5 h-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1 7C0.447715 7 -3.73832e-07 7.44771 -3.49691e-07 8C-3.2555e-07 8.55228 0.447715 9 1 9L13.0858 9L7.79289 14.2929C7.40237 14.6834 7.40237 15.3166 7.79289 15.7071C8.18342 16.0976 8.81658 16.0976 9.20711 15.7071L16.0303 8.88388C16.5185 8.39573 16.5185 7.60427 16.0303 7.11612L9.20711 0.292893C8.81658 -0.0976318 8.18342 -0.0976318 7.79289 0.292893C7.40237 0.683417 7.40237 1.31658 7.79289 1.70711L13.0858 7L1 7Z" fill="currentColor"/>
                 </svg>
-              </div>
-              <div class="absolute mb-10 -top-6 -right-6 z-[-1]">
-                <svg
-                  width="134"
-                  height="106"
-                  viewBox="0 0 134 106"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="1.66667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 31 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 103 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="104"
-                    r="1.66667"
-                    transform="rotate(-90 132 104)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 31 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="89.3333"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 89.3333)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 103 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="89.3338"
-                    r="1.66667"
-                    transform="rotate(-90 132 89.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="74.6673"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 74.6673)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 31 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 31 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="31.0003"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 31.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 103 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 103 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="74.6668"
-                    r="1.66667"
-                    transform="rotate(-90 132 74.6668)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="31.0001"
-                    r="1.66667"
-                    transform="rotate(-90 132 31.0001)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 31 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 31 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 103 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 103 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="60.0003"
-                    r="1.66667"
-                    transform="rotate(-90 132 60.0003)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="16.3336"
-                    r="1.66667"
-                    transform="rotate(-90 132 16.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="1.66667"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 1.66667 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="16.3333"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 16.3333 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 31 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="31"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 31 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="45.3336"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 45.3336)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="45.6667"
-                    cy="1.66683"
-                    r="1.66667"
-                    transform="rotate(-90 45.6667 1.66683)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="60.3333"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 60.3333 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="88.6667"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 88.6667 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="117.667"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 117.667 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="74.6667"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 74.6667 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 103 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="103"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 103 1.66707)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="45.3338"
-                    r="1.66667"
-                    transform="rotate(-90 132 45.3338)"
-                    fill="white"
-                  />
-                  <circle
-                    cx="132"
-                    cy="1.66707"
-                    r="1.66667"
-                    transform="rotate(-90 132 1.66707)"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ====== Hero Section End -->
-
-    <!-- ====== Features Section Start -->
-    <section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px]">
-      <div class="container">
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4">
-            <div class="mb-12 max-w-[620px] lg:mb-20">
-              <span class="mb-2 block text-lg font-semibold text-primary">
-                Features
-              </span>
-              <h2
-                class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[42px]"
-              >
-                Main Features Of PromptGenius
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-            <div class="wow fadeInUp group mb-12 bg-white" data-wow-delay=".1s">
-              <div
-                class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary"
-              >
-                <span
-                  class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
-                ></span>
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 52 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M44.9313 11.7H38.9188C40.5438 10.9687 41.7626 9.99374 42.2501 8.69374C42.9001 6.98749 42.2501 5.19999 40.3001 3.33124C38.1876 1.29999 35.9938 0.568738 33.8001 1.13749C29.9813 2.11249 27.4626 7.06874 26.2438 9.99374C25.1063 7.06874 22.5876 2.11249 18.6876 1.13749C16.4938 0.568738 14.3001 1.29999 12.1876 3.33124C10.2376 5.19999 9.5876 6.98749 10.2376 8.69374C10.7251 9.99374 12.0251 10.9687 13.5688 11.7H7.06885C5.0376 11.7 3.4126 13.325 3.4126 15.3562V21.5312C3.4126 23.5625 5.0376 25.1875 7.06885 25.1875H7.71885V46.2312C7.71885 48.8312 9.83135 51.025 12.5126 51.025H40.1376C42.7376 51.025 44.9313 48.9125 44.9313 46.2312V25.1875C46.9626 25.1875 48.5876 23.5625 48.5876 21.5312V15.3562C48.5063 13.325 46.8813 11.7 44.9313 11.7ZM34.5313 3.98124C34.7751 3.89999 35.0188 3.89999 35.1813 3.89999C36.1563 3.89999 37.2126 4.38749 38.2688 5.52499C38.7563 6.01249 39.8126 7.06874 39.5688 7.79999C39.0001 9.34374 33.9626 10.6437 28.9251 11.05C30.0626 8.36874 32.1751 4.54999 34.5313 3.98124ZM13.0001 7.71874C12.7563 6.98749 13.8126 5.93124 14.3001 5.44374C15.4376 4.38749 16.4126 3.81874 17.3876 3.81874C17.6313 3.81874 17.8751 3.81874 18.0376 3.89999C20.4751 4.54999 22.5063 8.28749 23.6438 10.9687C18.6063 10.5625 13.5688 9.26249 13.0001 7.71874ZM42.0063 46.2312C42.0063 47.2875 41.1126 48.1812 40.0563 48.1812H12.4313C11.3751 48.1812 10.4813 47.2875 10.4813 46.2312V25.1875H41.9251V46.2312H42.0063ZM45.6626 21.5312C45.6626 22.0187 45.3376 22.3437 44.8501 22.3437H7.06885C6.6626 22.3437 6.25635 22.0187 6.25635 21.5312V15.3562C6.25635 14.95 6.6626 14.5437 7.06885 14.5437H44.8501C45.2563 14.5437 45.6626 14.8687 45.6626 15.3562V21.5312Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark">
-                Time-saving
-              </h4>
-              <p class="mb-8 text-body-color lg:mb-11">
-                PromptGenius quickly generates optimized prompts, saving users time spent brainstorming and editing. For example, typing "opt:" before an email prompt can generate optimized suggestions that save time and energy.
-              </p>
-              <a
-                href="javascript:void(0)"
-                class="text-base font-medium text-body-color hover:text-primary"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-            <div
-              class="wow fadeInUp group mb-12 bg-white"
-              data-wow-delay=".15s"
-            >
-              <div
-                class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary"
-              >
-                <span
-                  class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
-                ></span>
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 52 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M49.8062 23.3187L43.875 17.3875C43.3063 16.8187 42.4125 16.8187 41.8438 17.3875C41.275 17.9562 41.275 18.85 41.8438 19.4187L46.9625 24.6187H27.4625V4.87498L32.5812 10.075C33.15 10.6437 34.0437 10.6437 34.6125 10.075C35.1812 9.50623 35.1812 8.61248 34.6125 8.04373L28.6812 2.11248C27.95 1.38123 26.975 0.974976 26 0.974976C24.9438 0.974976 24.05 1.38123 23.3188 2.11248L17.3875 8.04373C16.8187 8.61248 16.8187 9.50623 17.3875 10.075C17.6312 10.3187 18.0375 10.4812 18.3625 10.4812C18.6875 10.4812 19.0937 10.3187 19.3375 10.075L24.6187 4.87498V24.5375H4.95625L10.075 19.3375C10.6437 18.7687 10.6437 17.875 10.075 17.3062C9.50625 16.7375 8.6125 16.7375 8.04375 17.3062L2.1125 23.2375C0.65 24.7 0.65 27.1375 2.1125 28.6L8.04375 34.5312C8.2875 34.775 8.69375 34.9375 9.01875 34.9375C9.34375 34.9375 9.75 34.775 9.99375 34.5312C10.5625 33.9625 10.5625 33.0687 9.99375 32.5L4.79375 27.3H24.4563V47.125L19.2563 41.925C18.6875 41.3562 17.7938 41.3562 17.225 41.925C16.6563 42.4937 16.6563 43.3875 17.225 43.9562L23.1562 49.8875C23.8875 50.6187 24.8625 51.025 25.8375 51.025C26.8937 51.025 27.7875 50.6187 28.5187 49.8875L34.45 43.9562C35.0188 43.3875 35.0188 42.4937 34.45 41.925C33.8813 41.3562 32.9875 41.3562 32.4188 41.925L27.4625 47.125V27.3812H47.0438L41.8438 32.5812C41.275 33.15 41.275 34.0437 41.8438 34.6125C42.0875 34.8562 42.4938 35.0187 42.8188 35.0187C43.1438 35.0187 43.55 34.8562 43.7938 34.6125L49.725 28.6812C51.2688 27.2187 51.2687 24.7812 49.8062 23.3187Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark">
-                Increased productivity
-              </h4>
-              <p class="mb-8 text-body-color lg:mb-11">
-                The extension increases productivity by suggesting relevant and engaging ideas, allowing users to write efficiently without worrying about brainstorming. Optimized prompts can help create more informative and engaging content in a shorter amount of time.
-              </p>
-              <a
-                href="javascript:void(0)"
-                class="text-base font-medium text-body-color hover:text-primary"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-            <div class="wow fadeInUp group mb-12 bg-white" data-wow-delay=".2s">
-              <div
-                class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary"
-              >
-                <span
-                  class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
-                ></span>
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 35"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.7734 14.3281H3.82813C2.07813 14.3281 0.65625 12.9062 0.65625 11.1562V4.21094C0.65625 2.46094 2.07813 1.03906 3.82813 1.03906H10.7734C12.5234 1.03906 13.9453 2.46094 13.9453 4.21094V11.1562C13.9453 12.9062 12.5234 14.3281 10.7734 14.3281ZM3.82813 2.95312C3.17188 2.95312 2.57031 3.5 2.57031 4.21094V11.1562C2.57031 11.8125 3.11719 12.4141 3.82813 12.4141H10.7734C11.4297 12.4141 12.0313 11.8672 12.0313 11.1562V4.21094C12.0313 3.55469 11.4844 2.95312 10.7734 2.95312H3.82813Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M31.1719 14.3281H24.2266C22.4766 14.3281 21.0547 12.9062 21.0547 11.1562V4.21094C21.0547 2.46094 22.4766 1.03906 24.2266 1.03906H31.1719C32.9219 1.03906 34.3438 2.46094 34.3438 4.21094V11.1562C34.3438 12.9062 32.9219 14.3281 31.1719 14.3281ZM24.2266 2.95312C23.5703 2.95312 22.9688 3.5 22.9688 4.21094V11.1562C22.9688 11.8125 23.5156 12.4141 24.2266 12.4141H31.1719C31.8281 12.4141 32.4297 11.8672 32.4297 11.1562V4.21094C32.4297 3.55469 31.8828 2.95312 31.1719 2.95312H24.2266Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M10.7734 33.9609H3.82813C2.07813 33.9609 0.65625 32.5391 0.65625 30.7891V23.8438C0.65625 22.0938 2.07813 20.6719 3.82813 20.6719H10.7734C12.5234 20.6719 13.9453 22.0938 13.9453 23.8438V30.7891C13.9453 32.5391 12.5234 33.9609 10.7734 33.9609ZM3.82813 22.5859C3.17188 22.5859 2.57031 23.1328 2.57031 23.8438V30.7891C2.57031 31.4453 3.11719 32.0469 3.82813 32.0469H10.7734C11.4297 32.0469 12.0313 31.5 12.0313 30.7891V23.8438C12.0313 23.1875 11.4844 22.5859 10.7734 22.5859H3.82813Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M31.1719 33.9609H24.2266C22.4766 33.9609 21.0547 32.5391 21.0547 30.7891V23.8438C21.0547 22.0938 22.4766 20.6719 24.2266 20.6719H31.1719C32.9219 20.6719 34.3438 22.0938 34.3438 23.8438V30.7891C34.3438 32.5391 32.9219 33.9609 31.1719 33.9609ZM24.2266 22.5859C23.5703 22.5859 22.9688 23.1328 22.9688 23.8438V30.7891C22.9688 31.4453 23.5156 32.0469 24.2266 32.0469H31.1719C31.8281 32.0469 32.4297 31.5 32.4297 30.7891V23.8438C32.4297 23.1875 31.8828 22.5859 31.1719 22.5859H24.2266Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark">
-                Improved accuracy
-              </h4>
-              <p class="mb-8 text-body-color lg:mb-11">
-                The AI-powered algorithm generates accurate and relevant prompts, helping users write focused and error-free content. Optimized prompts can include all relevant information and avoid any inaccuracies.
-              </p>
-              <a
-                href="javascript:void(0)"
-                class="text-base font-medium text-body-color hover:text-primary"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/4">
-            <div
-              class="wow fadeInUp group mb-12 bg-white"
-              data-wow-delay=".25s"
-            >
-              <div
-                class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary"
-              >
-                <span
-                  class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
-                ></span>
-                <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 35"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M29.5312 21.6562L28.6563 21.1641L29.6953 20.5625C30.7344 19.9062 31.3359 18.8125 31.2812 17.6094C31.2266 16.4063 30.625 15.3125 29.5312 14.7109L27.8906 13.7813L29.6406 12.6875C30.6797 12.0313 31.2812 10.9375 31.2266 9.73438C31.1719 8.53125 30.5703 7.4375 29.4766 6.83594L19.25 1.09375C18.2109 0.492187 16.9531 0.546875 15.9141 1.09375L5.41406 7.21875C4.375 7.82031 3.71875 8.91406 3.71875 10.1172C3.71875 11.3203 4.375 12.4141 5.41406 13.0156L7.10938 14L5.41406 14.9844C4.375 15.5859 3.71875 16.6797 3.71875 17.8828C3.71875 19.0859 4.32031 20.1797 5.41406 20.7812L6.39844 21.3281L5.46875 21.875C4.42969 22.4766 3.77344 23.5703 3.77344 24.7734C3.77344 25.9766 4.375 27.0703 5.46875 27.6719L15.9141 33.6875C16.4609 34.0156 17.0078 34.125 17.6094 34.125C18.2109 34.125 18.8125 33.9609 19.3594 33.6328L29.6953 27.2891C30.7344 26.6328 31.3359 25.5391 31.2812 24.3359C31.2266 23.2969 30.625 22.2031 29.5312 21.6562ZM5.63281 10.1172C5.63281 9.57031 5.90625 9.13281 6.34375 8.85938L16.8438 2.78906C17.0625 2.67969 17.3359 2.57031 17.5547 2.57031C17.7734 2.57031 18.0469 2.625 18.2656 2.73437L28.5469 8.47656C28.9844 8.75 29.2578 9.1875 29.3125 9.73438C29.3125 10.2812 29.0391 10.7188 28.6016 10.9922L18.3203 17.3906C17.8828 17.6641 17.2812 17.6641 16.8438 17.3906L6.39844 11.375C5.90625 11.1562 5.63281 10.6641 5.63281 10.1172ZM5.63281 17.9375C5.63281 17.3906 5.90625 16.9531 6.34375 16.6797L9.02344 15.1484L15.8594 19.0859C16.4062 19.4141 16.9531 19.5234 17.5547 19.5234C18.1562 19.5234 18.7578 19.3594 19.3047 19.0312L26.0312 14.875L28.6016 16.2969C29.0391 16.5703 29.3125 17.0078 29.3672 17.5547C29.3672 18.1016 29.0938 18.5391 28.6563 18.8125L18.3203 25.2656C17.8828 25.5391 17.2812 25.5391 16.8438 25.2656L6.39844 19.25C5.90625 18.9766 5.63281 18.4844 5.63281 17.9375ZM28.6563 25.8125L18.3203 32.2109C17.8828 32.4844 17.2812 32.4844 16.8438 32.2109L6.39844 26.1953C5.96094 25.9219 5.6875 25.4844 5.6875 24.9375C5.6875 24.3906 5.96094 23.9531 6.39844 23.6797L8.3125 22.5859L15.8594 26.9609C16.4062 27.2891 16.9531 27.3984 17.5547 27.3984C18.1562 27.3984 18.7578 27.2344 19.3047 26.9062L26.7969 22.2578L28.6563 23.2969C29.0938 23.5703 29.3672 24.0078 29.4219 24.5547C29.3672 25.0469 29.0938 25.5391 28.6563 25.8125Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-              <h4 class="mb-3 text-xl font-bold text-dark">
-                Enhanced creativity
-              </h4>
-              <p class="mb-8 text-body-color lg:mb-11">
-                The extension enhances creativity by suggesting unique and engaging prompts, breaking writer's block and inspiring new ideas. Optimized prompts can help users come up with new and exciting ideas for their content.
-              </p>
-              <a
-                href="javascript:void(0)"
-                class="text-base font-medium text-body-color hover:text-primary"
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ====== Features Section End -->
-
-    <!-- ====== About Section Start -->
-    <section
-      id="about"
-      class="bg-[#f3f4fe] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]"
-    >
-      <div class="container">
-        <div class="wow fadeInUp bg-white" data-wow-delay=".2s">
-          <div class="-mx-4 flex flex-wrap">
-            <div class="w-full px-4">
-              <div
-                class="items-center justify-between overflow-hidden border lg:flex"
-              >
-                <div
-                  class="w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]"
-                >
-                  <span
-                    class="mb-5 inline-block bg-primary py-2 px-5 text-sm font-medium text-white"
-                  >
-                    About Us
-                  </span>
-                  <h2
-                    class="mb-6 text-3xl font-bold text-dark sm:text-4xl sm:leading-snug 2xl:text-[40px]"
-                  >
-                    Why we built PromptGenius
-                  </h2>
-                  <p class="mb-9 text-base leading-relaxed text-body-color">
-                    As avid users of ChatGPT, we often saw posts on social media platforms like Twitter and LinkedIn that shared a list of "10 prompts to unleash the true potential of ChatGPT." We would save these posts for future reference, but when we needed them urgently, we couldn't find them easily. It was frustrating to spend so much time searching for these prompts when we could be using that time to write high-quality content.
-                  </p>
-                  <p class="mb-9 text-base leading-relaxed text-body-color">
-                    That's when we decided to build Prompt Genius, a Chrome extension that allows users to write the perfect prompt on-the-go using AI inside the ChatGPT page. With Prompt Genius, users can quickly generate optimized prompts that save them time and effort. No more searching through saved posts or wasting time brainstorming ideas - Prompt Genius is the solution to all your prompt-related problems.
-                  </p>
-                  <a
-                    href="javascript:void(0)"
-                    class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90 hover:shadow-lg"
-                  >
-                    Learn More
-                  </a>
-                </div>
-                <div class="text-center">
-                  <div class="relative z-10 inline-block">
-                    <img
-                      src="assets/images/about/twwet2.png"
-                      alt="image"
-                      class="mx-auto lg:ml-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ====== About Section End -->
-
-    <!-- ====== Pricing Section Start -->
-    <section
-      id="pricing"
-      class="relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]"
-    >
-      <div class="container">
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4">
-            <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
-              <span class="mb-2 block text-lg font-semibold text-primary">
-                Pricing Table
-              </span>
-              <h2
-                class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]"
-              >
-                Our Pricing Plan
-              </h2>
-              <p
-                class="text-lg leading-relaxed text-body-color sm:text-xl sm:leading-relaxed"
-              >
-              Get Started with a One-Time License Purchase and Recharge Your Credits as Needed
-          
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap items-center justify-center">
-          <!-- <div class="w-full md:w-1/2 lg:w-1/3">
-            <div
-              class="wow fadeInUp relative z-10 mb-10 overflow-hidden rounded-xl border border-primary border-opacity-20 bg-white py-10 px-8 text-center shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
-              data-wow-delay=".15s
-              "
-            >
-              <span
-                class="mb-2 block text-base font-medium uppercase text-dark"
-              >
-                STARTING FROM
-              </span>
-              <h2 class="mb-9 text-[28px] font-semibold text-primary">
-                $ 19.99/mo
-              </h2>
-
-              <div class="mb-10">
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  1 User
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  All UI components
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  Lifetime access
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  Free updates
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  Use on 1 (one) project
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  3 Months support
-                </p>
-              </div>
-              <div class="w-full">
-                <a
-                  href="javascript:void(0)"
-                  class="inline-block rounded-full border border-[#D4DEFF] bg-transparent py-4 px-11 text-center text-base font-medium text-primary transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
-                >
-                  Purchase Now
-                </a>
-              </div>
-              <span
-                class="absolute left-0 bottom-0 z-[-1] block h-14 w-14 rounded-tr-full bg-primary"
-              >
-              </span>
-            </div>
-          </div> -->
-          <div class="w-full md:w-1/2 lg:w-1/3">
-            <div
-              class="wow fadeInUp relative z-10 mb-10 overflow-hidden rounded-xl bg-primary bg-gradient-to-b from-primary to-[#179BEE] py-10 px-8 text-center shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
-              data-wow-delay=".1s
-              "
-            >
-              <span
-                class="mb-5 inline-block rounded-full border border-white bg-white py-2 px-6 text-base font-semibold uppercase text-primary"
-              >
-                POPULAR
-              </span>
-              <span
-                class="mb-2 block text-base font-medium uppercase text-white"
-              >
-                Price
-              </span>
-              <!-- <h2 class="mb-9 text-[28px] font-semibold text-white">
-                $ 9.99 
-              </h2> -->
-              <h2 class="text-white text-4xl font-semibold mb-6">
-                $10.00
-                <span class="text-gray-400 text-lg font-normal inline-block ml-2" style="text-decoration: line-through;">$50.00</span>
-              </h2>
+              </button>
+              <a href="https://chrome.google.com/webstore/detail/promptgenius/cmaclenleekhflmjbiemeogoknfdanif" type="button" class="py-3 px-4 mt-2 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
               
+                <span class="px-2">Add to Chrome</span> 
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="20" height="20" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 640 640"><path d="M161.423 279.11L69.816 120.474C128.458 47.068 218.708-.012 319.976-.012c117.168 0 219.57 62.965 275.33 156.888H334.175c-4.69-.39-9.438-.638-14.245-.638-76.158 0-140.352 52.288-158.553 122.848l.048.024zm273.121-75.958H617.96c14.197 36.202 22.04 75.64 22.04 116.872C640 495.55 498.668 638.04 323.626 640l130.88-226.692c18.449-26.492 29.244-58.642 29.244-93.284 0-45.71-18.839-87.12-49.205-116.872zM203.742 320.024c0-64.099 52.158-116.234 116.234-116.234 64.087 0 116.246 52.159 116.246 116.234 0 64.088-52.158 116.246-116.246 116.246-64.076 0-116.234-52.158-116.234-116.246zm160.112 157.762l-91.596 158.695C118.17 613.438 0 480.515 0 320.024c0-56.988 14.918-110.505 41.044-156.876l130.643 226.278c26.162 55.678 82.808 94.372 148.277 94.372 15.19 0 29.87-2.091 43.879-5.965l.012-.047z"/></svg>
               
-              <p class="text-white text-xs mb-10">
-                Early Bird Price! Limited Time Offer for Lifetime Access to Our Extension. Don't miss out!
-              </p>
-              <div class="mb-10">
-                <p class="mb-1 text-base font-medium leading-loose text-white">
-                 Get free 20 credits after activation
-                </p>
-                <p class="mb-1 text-base font-medium leading-loose text-white">
-                  Priority lifetime access
-                </p>
-                <p class="mb-1 text-base font-medium leading-loose text-white">
-                  Free updates 
-                </p>
-                <p class="mb-1 text-base font-medium leading-loose text-white">
-                  Priority support
-                </p>
-              </div>
-              <div class="w-full">
-                <a
-                  href="javascript:void(0)"
-                  class="inline-block rounded-full border border-white bg-white py-4 px-11 text-center text-base font-medium text-dark transition duration-300 ease-in-out hover:border-dark hover:bg-dark hover:text-white"
-                >
-                Unlock the power
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="w-full md:w-1/2 lg:w-1/3">
-            <div
-              class="wow fadeInUp relative z-10 mb-10 overflow-hidden rounded-xl border border-primary border-opacity-20 bg-white py-10 px-8 text-center shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
-              data-wow-delay=".15s
-              "
-            >
-              <span
-                class="mb-2 block text-base font-medium uppercase text-dark"
-              >
-                STARTING FROM
-              </span>
-              <h2 class="mb-9 text-[28px] font-semibold text-primary">
-                $ 70.99/mo
-              </h2>
-
-              <div class="mb-10">
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  1 User
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  All UI components
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  Lifetime access
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  Free updates
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  Use on unlimited project
-                </p>
-                <p
-                  class="mb-1 text-base font-medium leading-loose text-body-color"
-                >
-                  4 Months support
-                </p>
-              </div>
-              <div class="w-full">
-                <a
-                  href="javascript:void(0)"
-                  class="inline-block rounded-full border border-[#D4DEFF] bg-transparent py-4 px-11 text-center text-base font-medium text-primary transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
-                >
-                  Purchase Now
-                </a>
-              </div>
-
-              <span
-                class="absolute right-0 top-0 z-[-1] block h-14 w-14 rounded-bl-full bg-secondary"
-              >
-              </span>
-            </div>
-          </div> -->
-          
-        </div>
-        <div class="mx-auto" style="max-width: 700px;">
-        <p
-        class="text-sm text-center  leading-relaxed text-body-color sm:text-sm sm:leading-relaxed"
-      >
-      PS: Please note that the one-time payment is for the extension only. After using the 20 free credits, you will need to recharge your account with credits to continue using the extension. Each credit equals one prompt generated by AI, which consumes GPU hosting. Unlike other extensions that show static data, our extension uses AI to generate the best possible prompts. A recharge of 100 credits costs $10.
-      </p>
-      </div>
-      </div>
-    </section>
-    <!-- ====== Pricing Section End -->
-
-    <!-- ====== Faq Section Start -->
-    <section id="FAQ"
-      class="relative z-20 overflow-hidden bg-[#f3f4ff] pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]"
-    >
-      <div class="container">
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4">
-            <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
-              <span class="mb-2 block text-lg font-semibold text-primary">
-                FAQ
-              </span>
-              <h2
-                class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[42px]"
-              >
-                Any Questions? Answered
-              </h2>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-4 lg:w-1/2">
-            <div
-              class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
-              data-wow-delay=".1s
-              "
-            >
-              <button class="faq-btn flex w-full items-center text-left">
-                <div
-                  class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary"
-                >
-                  <svg
-                    width="17"
-                    height="10"
-                    viewBox="0 0 17 10"
-                    class="icon fill-current"
-                  >
-                    <path
-                      d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
-                      fill="#3056D3"
-                      stroke="#3056D3"
-                    />
-                  </svg>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-base font-semibold text-black sm:text-lg">
-                    Are the prompts generated by PromptGenius optimized for best results?
-                  </h4>
-                </div>
-              </button>
-              <div class="faq-content hidden pl-[62px]">
-                <p class="py-3 text-base leading-relaxed text-body-color">
-                  Yes, the prompts generated by PromptGenius are optimized for best results. The platform's advanced AI and NLP algorithms analyze the user's writing style and preferences to generate customized prompts that are tailored to the user's needs and goals.
-
-
-                </p>
-              </div>
-            </div>
-            <div
-              class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
-              data-wow-delay=".15s
-              "
-            >
-              <button class="faq-btn flex w-full items-center text-left">
-                <div
-                  class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary"
-                >
-                  <svg
-                    width="17"
-                    height="10"
-                    viewBox="0 0 17 10"
-                    class="icon fill-current"
-                  >
-                    <path
-                      d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
-                      fill="#3056D3"
-                      stroke="#3056D3"
-                    />
-                  </svg>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-base font-semibold text-black sm:text-lg">
-                    Can the prompts generated by PromptGenius be of any type, such as for SEO or brainstorming?
-                  </h4>
-                </div>
-              </button>
-              <div class="faq-content hidden pl-[62px]">
-                <p class="py-3 text-base leading-relaxed text-body-color">
-                  Yes, PromptGenius can generate prompts for a wide range of writing tasks, including SEO writing, brainstorming, and more. The platform's AI-powered algorithms analyze the user's writing style and preferences to generate customized prompts that are relevant and engaging.
-              </div>
-            </div>
-            <div
-              class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
-              data-wow-delay=".2s
-              "
-            >
-              <button class="faq-btn flex w-full items-center text-left">
-                <div
-                  class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary"
-                >
-                  <svg
-                    width="17"
-                    height="10"
-                    viewBox="0 0 17 10"
-                    class="icon fill-current"
-                  >
-                    <path
-                      d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
-                      fill="#3056D3"
-                      stroke="#3056D3"
-                    />
-                  </svg>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-base font-semibold text-black sm:text-lg">
-                    Do I need to activate PromptGenius with a license?
-                  </h4>
-                </div>
-              </button>
-              <div class="faq-content hidden pl-[62px]">
-                <p class="py-3 text-base leading-relaxed text-body-color">
-                  Yes, a license is required to activate PromptGenius. Once you activate the product, you will receive 20 free credits to try it out. After that, you can recharge your credits with $10 for 100 credits, where 1 credit equals 1 prompt.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="w-full px-4 lg:w-1/2">
-            <div
-              class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
-              data-wow-delay=".1s
-              "
-            >
-              <button class="faq-btn flex w-full items-center text-left">
-                <div
-                  class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary"
-                >
-                  <svg
-                    width="17"
-                    height="10"
-                    viewBox="0 0 17 10"
-                    class="icon fill-current"
-                  >
-                    <path
-                      d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
-                      fill="#3056D3"
-                      stroke="#3056D3"
-                    />
-                  </svg>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-base font-semibold text-black sm:text-lg">
-                    What is the technology behind PromptGenius?
-                  </h4>
-                </div>
-              </button>
-              <div class="faq-content hidden pl-[62px]">
-                <p class="py-3 text-base leading-relaxed text-body-color">
-                  PromptGenius is powered by advanced AI and natural language processing (NLP) algorithms that analyze the user's writing style and preferences to generate personalized prompts.
-
-
-                </p>
-              </div>
-            </div>
-            <div
-              class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
-              data-wow-delay=".15s
-              "
-            >
-              <button class="faq-btn flex w-full items-center text-left">
-                <div
-                  class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary"
-                >
-                  <svg
-                    width="17"
-                    height="10"
-                    viewBox="0 0 17 10"
-                    class="icon fill-current"
-                  >
-                    <path
-                      d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
-                      fill="#3056D3"
-                      stroke="#3056D3"
-                    />
-                  </svg>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-base font-semibold text-black sm:text-lg">
-                    Is there a refund policy for PromptGenius?
-                  </h4>
-                </div>
-              </button>
-              <div class="faq-content hidden pl-[62px]">
-                <p class="py-3 text-base leading-relaxed text-body-color">
-                  PromptGenius does not offer refunds, but the platform offers a satisfaction guarantee. If you encounter any issues or have any concerns, the PromptGenius team will work with you to resolve the problem and ensure your satisfaction.
-                </p>
-              </div>
-            </div>
-            <div
-              class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
-              data-wow-delay=".2s
-              "
-            >
-              <button class="faq-btn flex w-full items-center text-left">
-                <div
-                  class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary"
-                >
-                  <svg
-                    width="17"
-                    height="10"
-                    viewBox="0 0 17 10"
-                    class="icon fill-current"
-                  >
-                    <path
-                      d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
-                      fill="#3056D3"
-                      stroke="#3056D3"
-                    />
-                  </svg>
-                </div>
-                <div class="w-full">
-                  <h4 class="text-base font-semibold text-black sm:text-lg">
-                    Can non-technical users use PromptGenius?
-                  </h4>
-                </div>
-              </button>
-              <div class="faq-content hidden pl-[62px]">
-                <p class="py-3 text-base leading-relaxed text-body-color">
-                  Yes, PromptGenius is designed to be user-friendly and easy to use for non-technical users. The extension has a simple and intuitive interface, and the prompts are generated automatically, so there's no need for any technical knowledge or expertise.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="absolute bottom-0 right-0 z-[-1]">
-        <svg
-          width="1440"
-          height="886"
-          viewBox="0 0 1440 886"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            opacity="0.5"
-            d="M193.307 -273.321L1480.87 1014.24L1121.85 1373.26C1121.85 1373.26 731.745 983.231 478.513 729.927C225.976 477.317 -165.714 85.6993 -165.714 85.6993L193.307 -273.321Z"
-            fill="url(#paint0_linear)"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear"
-              x1="1308.65"
-              y1="1142.58"
-              x2="602.827"
-              y2="-418.681"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#3056D3" stop-opacity="0.36" />
-              <stop offset="1" stop-color="#F5F2FD" stop-opacity="0" />
-              <stop offset="1" stop-color="#F5F2FD" stop-opacity="0.096144" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </section>
-    <!-- ====== Faq Section End -->
-
-    <!-- ====== Testimonials Start ====== -->
-    <section id="testimonials" class="pt-20 md:pt-[120px]">
-      <div class="container px-4">
-        <div class="flex flex-wrap">
-          <div class="mx-4 w-full">
-            <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
-              <span class="mb-2 block text-lg font-semibold text-primary">
-                Testimonials
-              </span>
-              <h2
-                class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[42px]"
-              >
-                What our Client Say
-              </h2>
+              </a>
               
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap">
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div
-              class="ud-single-testimonial wow fadeInUp mb-12 bg-white p-8 shadow-testimonial"
-              data-wow-delay=".1s
-              "
-            >
-              <div class="ud-testimonial-ratings mb-3 flex items-center">
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div class="ud-testimonial-content mb-6">
-                <p class="text-base tracking-wide text-body-color">
-                  “PromptGenius is a time-saving tool for content creation, allowing users to generate high-quality prompts on-the-go. Its user-friendly interface seamlessly integrates with ChatGPT.</p>
-              </div>
-              <div class="ud-testimonial-info flex items-center">
-                <div
-                  class="ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full"
-                >
-                  <!-- <img
-                    src="assets/images/testimonials/author-01.png"
-                    alt="author"
-                  /> -->
-                </div>
-                <div class="ud-testimonial-meta">
-                  <h4 class="text-sm font-semibold">Sabo Masties</h4>
-                  <p class="text-xs text-[#969696]">Marketing Director @ Acme Corporation</p>
-                </div>
               </div>
             </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div
-              class="ud-single-testimonial wow fadeInUp mb-12 bg-white p-8 shadow-testimonial"
-              data-wow-delay=".15s
-              "
-            >
-              <div class="ud-testimonial-ratings mb-3 flex items-center">
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div class="ud-testimonial-content mb-6">
-                <p class="text-base tracking-wide text-body-color">
-                  “PromptGenius is an exceptional tool that utilizes AI to generate high-quality prompts within the ChatGPT, resulting in optimal outcomes. With just a click, it enables you to create content with unique and engaging prompts that spark creativity and drive results.
-                </p>
-              </div>
-              <div class="ud-testimonial-info flex items-center">
-                <div
-                  class="ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full"
-                >
-                  <!-- <img
-                    src="assets/images/testimonials/author-02.png"
-                    alt="author"
-                  /> -->
-                </div>
-                <div class="ud-testimonial-meta">
-                  <h4 class="text-sm font-semibold"> Sarah Johnson</h4>
-                  <p class="text-xs text-[#969696]">Founder @ UI Hunter</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-            <div
-              class="ud-single-testimonial wow fadeInUp mb-12 bg-white p-8 shadow-testimonial"
-              data-wow-delay=".2s
-              "
-            >
-              <div class="ud-testimonial-ratings mb-3 flex items-center">
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-                <span class="mr-1 text-[#fbb040]">
-                  <svg
-                    width="18"
-                    height="16"
-                    viewBox="0 0 18 16"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div class="ud-testimonial-content mb-6">
-                <p class="text-base tracking-wide text-body-color">
-                  “PromptGenius is a game-changer for content creators, providing a wide variety of high-quality and thought-provoking prompts that are relevant to their audience and niche. It is an invaluable tool for generating fresh ideas to keep audiences engaged.
-                </p>
-              </div>
-              <div class="ud-testimonial-info flex items-center">
-                <div
-                  class="ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full"
-                >
-                  <!-- <img
-                    src="assets/images/testimonials/author-03.png"
-                    alt="author"
-                  /> -->
-                </div>
-                <div class="ud-testimonial-meta">
-                  <h4 class="text-sm font-semibold">William Smith</h4>
-                  <p class="text-xs text-[#969696]">Content Creator</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="flex flex-wrap">
-          <div class="mx-4 w-full">
-            <div class="wow fadeInUp" data-wow-delay=".2s">
-              <div class="ud-title mb-8">
-                <h6
-                  class="relative inline-flex items-center text-xs font-normal text-body-color"
-                >
-                  Some Of Our Clients
-                  <span class="ml-4 inline-block h-[1px] w-8 bg-[#afb2b5]">
-                  </span>
-                </h6>
-              </div>
-              <div class="ud-brands-logo flex flex-wrap items-center">
-                <div class="ud-single-logo mr-10 mb-5 max-w-[140px]">
-                  <a
-                    href="https://tailgrids.com"
-                    target="_blank"
-                    rel="nofollow noopner"
-                  >
-                    <img
-                      src="assets/images/brands/tailgrids.svg"
-                      alt="tailgrids"
-                      class="grayscale duration-300 hover:filter-none"
-                    />
-                  </a>
-                </div>
-                <div class="ud-single-logo mr-10 mb-5 max-w-[140px]">
-                  <a
-                    href="https://ayroui.com"
-                    target="_blank"
-                    rel="nofollow noopner"
-                  >
-                    <img
-                      src="assets/images/brands/ayroui.svg"
-                      alt="ayroui"
-                      class="grayscale duration-300 hover:filter-none"
-                    />
-                  </a>
-                </div>
-                <div class="ud-single-logo mr-10 mb-5 max-w-[140px]">
-                  <a
-                    href="https://uideck.com"
-                    target="_blank"
-                    rel="nofollow noopner"
-                  >
-                    <img
-                      src="assets/images/brands/uideck.svg"
-                      alt="uideck"
-                      class="grayscale duration-300 hover:filter-none"
-                    />
-                  </a>
-                </div>
-                <div class="ud-single-logo mr-10 mb-5 max-w-[140px]">
-                  <a
-                    href="https://graygrids.com"
-                    target="_blank"
-                    rel="nofollow noopner"
-                  >
-                    <img
-                      src="assets/images/brands/graygrids.svg"
-                      alt="graygrids"
-                      class="grayscale duration-300 hover:filter-none"
-                    />
-                  </a>
-                </div>
-                <div class="ud-single-logo mr-10 mb-5 max-w-[140px]">
-                  <a
-                    href="https://lineicons.com"
-                    target="_blank"
-                    rel="nofollow noopner"
-                  >
-                    <img
-                      src="assets/images/brands/lineicons.svg"
-                      alt="lineicons"
-                      class="grayscale duration-300 hover:filter-none"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
-    </section>
-
-
-    <!-- ====== Contact Start ====== -->
-    <section id="contact" class="relative py-20 md:py-[120px]">
-      <div
-        class="absolute top-0 left-0 z-[-1] h-1/2 w-full bg-[#f3f4fe] lg:h-[45%] xl:h-1/2"
-      ></div>
-      <div class="container px-4">
-        <div class="-mx-4 flex flex-wrap items-center">
-          <div class="w-full px-4 lg:w-7/12 xl:w-8/12">
-            <div class="ud-contact-content-wrapper">
-              <div class="ud-contact-title mb-12 lg:mb-[150px]">
-                <span class="mb-5 text-base font-semibold text-dark">
-                  CONTACT US
-                </span>
-                <h2 class="text-[35px] font-semibold">
-                  Let's talk about <br />
-                  Love to hear from you!
-                </h2>
-              </div>
-              <div class="mb-12 flex flex-wrap justify-between lg:mb-0">
-                <div class="mb-8 flex w-[330px] max-w-full">
-                  <div class="mr-6 text-[32px] text-primary">
-                    <svg
-                      width="29"
-                      height="35"
-                      viewBox="0 0 29 35"
-                      class="fill-current"
-                    >
-                      <path
-                        d="M14.5 0.710938C6.89844 0.710938 0.664062 6.72656 0.664062 14.0547C0.664062 19.9062 9.03125 29.5859 12.6406 33.5234C13.1328 34.0703 13.7891 34.3437 14.5 34.3437C15.2109 34.3437 15.8672 34.0703 16.3594 33.5234C19.9688 29.6406 28.3359 19.9062 28.3359 14.0547C28.3359 6.67188 22.1016 0.710938 14.5 0.710938ZM14.9375 32.2109C14.6641 32.4844 14.2812 32.4844 14.0625 32.2109C11.3828 29.3125 2.57812 19.3594 2.57812 14.0547C2.57812 7.71094 7.9375 2.625 14.5 2.625C21.0625 2.625 26.4219 7.76562 26.4219 14.0547C26.4219 19.3594 17.6172 29.2578 14.9375 32.2109Z"
-                      />
-                      <path
-                        d="M14.5 8.58594C11.2734 8.58594 8.59375 11.2109 8.59375 14.4922C8.59375 17.7188 11.2187 20.3984 14.5 20.3984C17.7812 20.3984 20.4062 17.7734 20.4062 14.4922C20.4062 11.2109 17.7266 8.58594 14.5 8.58594ZM14.5 18.4297C12.3125 18.4297 10.5078 16.625 10.5078 14.4375C10.5078 12.25 12.3125 10.4453 14.5 10.4453C16.6875 10.4453 18.4922 12.25 18.4922 14.4375C18.4922 16.625 16.6875 18.4297 14.5 18.4297Z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 class="mb-6 text-lg font-semibold">Our Location</h5>
-                    <p class="text-base text-body-color">
-                      Hyderabad,India
-                    </p>
-                  </div>
-                </div>
-                <div class="mb-8 flex w-[330px] max-w-full">
-                  <div class="mr-6 text-[32px] text-primary">
-                    <svg
-                      width="34"
-                      height="25"
-                      viewBox="0 0 34 25"
-                      class="fill-current"
-                    >
-                      <path
-                        d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 class="mb-6 text-lg font-semibold">How Can We Help?</h5>
-                    <p class="text-base text-body-color">Shammir@the-promptgenius.com</p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <div
-              class="wow fadeInUp rounded-lg bg-white py-10 px-8 shadow-testimonial sm:py-12 sm:px-10 md:p-[60px] lg:p-10 lg:py-12 lg:px-10 2xl:p-[60px]"
-              data-wow-delay=".2s
-              "
-            >
-              <h3 class="mb-8 text-2xl font-semibold md:text-[26px]">
-                Send us a Message
-              </h3>
-              <form method="post" autocomplete="off" name="google-sheet">
-                <div class="mb-6">
-                  <label for="fullName" class="block text-xs text-dark"
-                    >Full Name*</label
-                  >
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Adam Gelius"
-                    class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none"
-                  />
-                </div>
-                <div class="mb-6">
-                  <label for="email" class="block text-xs text-dark"
-                    >Email*</label
-                  >
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="example@yourmail.com"
-                    class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none"
-                  />
-                </div>
-                <div class="mb-6">
-                  <label for="phone" class="block text-xs text-dark"
-                    >Phone*</label
-                  >
-                  <input
-                    type="text"
-                    name="phone"
-                    placeholder="+885 1254 5211 552"
-                    class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none"
-                  />
-                </div>
-                <div class="mb-6">
-                  <label for="message" class="block text-xs text-dark"
-                    >Message*</label
-                  >
-                  <textarea
-                    name="message"
-                    rows="1"
-                    placeholder="type your message here"
-                    class="w-full resize-none border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none"
-                  ></textarea>
-                </div>
-                <div class="mb-0">
-                  <input
-                    type="submit"
-                    class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-dark"
-                  >
-                </input>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ====== Contact End ====== -->
-
-   <footer class="bg-white dark:bg-gray-800">
-    <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+         
       
-        
-        <div class="text-center">
-            <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
-                <img style="width:200px;" src="./assets/images/logo/white_bg_logo.png" class="h-6 mr-3 sm:h-9" alt="Nocode Plugins Logo" />
 
-            </a>
-            <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2022-2023 PromptGenius™. All Rights Reserved. 
-            </span>
-            <ul class="flex justify-center items-center mt-5 space-x-5">
-                <p class="text-sm text-gray-500">Developed by Shammir :</p>
-                <li>
-                    <a href="https://twitter.com/ShammirBaig" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                      width="20" height="20"
-                      viewBox="0 0 50 50">
-                      <path d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"></path>
-                      </svg></a>
-                </li>
-                <li >
-                    <a href="https://github.com/shammirbaig" class="ml-2 text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                      width="20" height="20"
-                      viewBox="0 0 50 50">
-                          <path d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"></path>
-                      </svg>    </a>
-                </li>
-              
-            </ul>
+          </div>
         </div>
+
+        <div class="w-full px-4 mb-15">
+          <div class="wow fadeInUp relative z-10 mx-auto " data-wow-delay=".25s" style="max-width:900px">
+            <div style="margin-bottom: 100px;" class="mt-16 ">
+              <img src="assets/images/hero/hero.gif" alt="hero" class="shadow-sm mx-auto max-w-full rounded-t-xl rounded-tr-xl" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
-    <!-- ====== Footer Section End -->
+  </div>
+  <!-- ====== Hero Section End -->
 
-    <!-- ====== Back To Top Start -->
-    <a
-      href="javascript:void(0)"
-      class="back-to-top fixed bottom-8 right-8 left-auto z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-dark"
-    >
-      <span
-        class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"
-      ></span>
-    </a>
-    <!-- ====== Back To Top End -->
+  <!-- <section class="pt-20 pb-8 lg:pt-120px lg:pb-70px">
+      
+    </section>
+     -->
 
-    <!-- ====== All Scripts -->
+  <!-- ====== Testimonials Start ====== -->
+  <section id="testimonials" class="pt-20 md:pt-[120px]">
+    <div class="container px-4">
+      <div class="flex flex-wrap">
+        <div class="mx-4 w-full">
+          <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
+            <span class="mb-2 block text-lg font-semibold text-primary">
+              Testimonials
+            </span>
+            <h2 style="line-height: normal;" class="mb-4 text-xl font-bold text-dark sm:text-3xl md:text-[42px]">
+              What our customers are saying about us on ProductHunt
+            </h2>
 
-    <script src="./assets/js/main.js"></script>
-    <script defer src="./assets/js/backend.js"></script>
-    <script>
-      // ==== for menu scroll
-      const pageLink = document.querySelectorAll(".ud-menu-scroll");
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto flex justify-center">
+        <div class="max-w-2xl w-full">
+          <div class="aspect-w-4 aspect-h-3">
+            <iframe style="border: none;height: 100vh; width: 100%;"
+              src="https://cards.producthunt.com/cards/testimonials/625797,625429,625371,625037,625380" frameborder="0"
+              scrolling="Yes" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
 
-      pageLink.forEach((elem) => {
-        elem.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.querySelector(elem.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-            offsetTop: 1 - 60,
-          });
+    </div>
+  </section>
+
+
+  <!-- ====== Features Section Start -->
+  <section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px]">
+    <div class="container">
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4">
+          <div class="mb-12 max-w-[620px] lg:mb-20">
+            <span class="mb-2 block text-lg font-semibold text-primary">
+              Features
+            </span>
+            <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[42px]">
+              Main Features Of PromptGenius
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4 md:w-1/2 lg:w-1/4">
+          <div class="wow fadeInUp group mb-12 bg-white" data-wow-delay=".1s">
+            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+              <span
+                class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <svg width="35" height="35" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M44.9313 11.7H38.9188C40.5438 10.9687 41.7626 9.99374 42.2501 8.69374C42.9001 6.98749 42.2501 5.19999 40.3001 3.33124C38.1876 1.29999 35.9938 0.568738 33.8001 1.13749C29.9813 2.11249 27.4626 7.06874 26.2438 9.99374C25.1063 7.06874 22.5876 2.11249 18.6876 1.13749C16.4938 0.568738 14.3001 1.29999 12.1876 3.33124C10.2376 5.19999 9.5876 6.98749 10.2376 8.69374C10.7251 9.99374 12.0251 10.9687 13.5688 11.7H7.06885C5.0376 11.7 3.4126 13.325 3.4126 15.3562V21.5312C3.4126 23.5625 5.0376 25.1875 7.06885 25.1875H7.71885V46.2312C7.71885 48.8312 9.83135 51.025 12.5126 51.025H40.1376C42.7376 51.025 44.9313 48.9125 44.9313 46.2312V25.1875C46.9626 25.1875 48.5876 23.5625 48.5876 21.5312V15.3562C48.5063 13.325 46.8813 11.7 44.9313 11.7ZM34.5313 3.98124C34.7751 3.89999 35.0188 3.89999 35.1813 3.89999C36.1563 3.89999 37.2126 4.38749 38.2688 5.52499C38.7563 6.01249 39.8126 7.06874 39.5688 7.79999C39.0001 9.34374 33.9626 10.6437 28.9251 11.05C30.0626 8.36874 32.1751 4.54999 34.5313 3.98124ZM13.0001 7.71874C12.7563 6.98749 13.8126 5.93124 14.3001 5.44374C15.4376 4.38749 16.4126 3.81874 17.3876 3.81874C17.6313 3.81874 17.8751 3.81874 18.0376 3.89999C20.4751 4.54999 22.5063 8.28749 23.6438 10.9687C18.6063 10.5625 13.5688 9.26249 13.0001 7.71874ZM42.0063 46.2312C42.0063 47.2875 41.1126 48.1812 40.0563 48.1812H12.4313C11.3751 48.1812 10.4813 47.2875 10.4813 46.2312V25.1875H41.9251V46.2312H42.0063ZM45.6626 21.5312C45.6626 22.0187 45.3376 22.3437 44.8501 22.3437H7.06885C6.6626 22.3437 6.25635 22.0187 6.25635 21.5312V15.3562C6.25635 14.95 6.6626 14.5437 7.06885 14.5437H44.8501C45.2563 14.5437 45.6626 14.8687 45.6626 15.3562V21.5312Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <h4 class="mb-3 text-xl font-bold text-dark">
+              Time-saving
+            </h4>
+            <p class="mb-8 text-body-color lg:mb-11">
+              PromptGenius quickly generates optimized prompts, saving users time spent brainstorming and editing. For
+              example, typing "opt:" before an email prompt can generate optimized suggestions that save time and
+              energy.
+            </p>
+            <a href="javascript:void(0)" class="text-base font-medium text-body-color hover:text-primary">
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/4">
+          <div class="wow fadeInUp group mb-12 bg-white" data-wow-delay=".15s">
+            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+              <span
+                class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <svg width="35" height="35" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M49.8062 23.3187L43.875 17.3875C43.3063 16.8187 42.4125 16.8187 41.8438 17.3875C41.275 17.9562 41.275 18.85 41.8438 19.4187L46.9625 24.6187H27.4625V4.87498L32.5812 10.075C33.15 10.6437 34.0437 10.6437 34.6125 10.075C35.1812 9.50623 35.1812 8.61248 34.6125 8.04373L28.6812 2.11248C27.95 1.38123 26.975 0.974976 26 0.974976C24.9438 0.974976 24.05 1.38123 23.3188 2.11248L17.3875 8.04373C16.8187 8.61248 16.8187 9.50623 17.3875 10.075C17.6312 10.3187 18.0375 10.4812 18.3625 10.4812C18.6875 10.4812 19.0937 10.3187 19.3375 10.075L24.6187 4.87498V24.5375H4.95625L10.075 19.3375C10.6437 18.7687 10.6437 17.875 10.075 17.3062C9.50625 16.7375 8.6125 16.7375 8.04375 17.3062L2.1125 23.2375C0.65 24.7 0.65 27.1375 2.1125 28.6L8.04375 34.5312C8.2875 34.775 8.69375 34.9375 9.01875 34.9375C9.34375 34.9375 9.75 34.775 9.99375 34.5312C10.5625 33.9625 10.5625 33.0687 9.99375 32.5L4.79375 27.3H24.4563V47.125L19.2563 41.925C18.6875 41.3562 17.7938 41.3562 17.225 41.925C16.6563 42.4937 16.6563 43.3875 17.225 43.9562L23.1562 49.8875C23.8875 50.6187 24.8625 51.025 25.8375 51.025C26.8937 51.025 27.7875 50.6187 28.5187 49.8875L34.45 43.9562C35.0188 43.3875 35.0188 42.4937 34.45 41.925C33.8813 41.3562 32.9875 41.3562 32.4188 41.925L27.4625 47.125V27.3812H47.0438L41.8438 32.5812C41.275 33.15 41.275 34.0437 41.8438 34.6125C42.0875 34.8562 42.4938 35.0187 42.8188 35.0187C43.1438 35.0187 43.55 34.8562 43.7938 34.6125L49.725 28.6812C51.2688 27.2187 51.2687 24.7812 49.8062 23.3187Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <h4 class="mb-3 text-xl font-bold text-dark">
+              Increased productivity
+            </h4>
+            <p class="mb-8 text-body-color lg:mb-11">
+              The extension increases productivity by suggesting relevant and engaging ideas, allowing users to write
+              efficiently without worrying about brainstorming. Optimized prompts can help create more informative and
+              engaging content in a shorter amount of time.
+            </p>
+            <a href="javascript:void(0)" class="text-base font-medium text-body-color hover:text-primary">
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/4">
+          <div class="wow fadeInUp group mb-12 bg-white" data-wow-delay=".2s">
+            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+              <span
+                class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.7734 14.3281H3.82813C2.07813 14.3281 0.65625 12.9062 0.65625 11.1562V4.21094C0.65625 2.46094 2.07813 1.03906 3.82813 1.03906H10.7734C12.5234 1.03906 13.9453 2.46094 13.9453 4.21094V11.1562C13.9453 12.9062 12.5234 14.3281 10.7734 14.3281ZM3.82813 2.95312C3.17188 2.95312 2.57031 3.5 2.57031 4.21094V11.1562C2.57031 11.8125 3.11719 12.4141 3.82813 12.4141H10.7734C11.4297 12.4141 12.0313 11.8672 12.0313 11.1562V4.21094C12.0313 3.55469 11.4844 2.95312 10.7734 2.95312H3.82813Z"
+                  fill="white" />
+                <path
+                  d="M31.1719 14.3281H24.2266C22.4766 14.3281 21.0547 12.9062 21.0547 11.1562V4.21094C21.0547 2.46094 22.4766 1.03906 24.2266 1.03906H31.1719C32.9219 1.03906 34.3438 2.46094 34.3438 4.21094V11.1562C34.3438 12.9062 32.9219 14.3281 31.1719 14.3281ZM24.2266 2.95312C23.5703 2.95312 22.9688 3.5 22.9688 4.21094V11.1562C22.9688 11.8125 23.5156 12.4141 24.2266 12.4141H31.1719C31.8281 12.4141 32.4297 11.8672 32.4297 11.1562V4.21094C32.4297 3.55469 31.8828 2.95312 31.1719 2.95312H24.2266Z"
+                  fill="white" />
+                <path
+                  d="M10.7734 33.9609H3.82813C2.07813 33.9609 0.65625 32.5391 0.65625 30.7891V23.8438C0.65625 22.0938 2.07813 20.6719 3.82813 20.6719H10.7734C12.5234 20.6719 13.9453 22.0938 13.9453 23.8438V30.7891C13.9453 32.5391 12.5234 33.9609 10.7734 33.9609ZM3.82813 22.5859C3.17188 22.5859 2.57031 23.1328 2.57031 23.8438V30.7891C2.57031 31.4453 3.11719 32.0469 3.82813 32.0469H10.7734C11.4297 32.0469 12.0313 31.5 12.0313 30.7891V23.8438C12.0313 23.1875 11.4844 22.5859 10.7734 22.5859H3.82813Z"
+                  fill="white" />
+                <path
+                  d="M31.1719 33.9609H24.2266C22.4766 33.9609 21.0547 32.5391 21.0547 30.7891V23.8438C21.0547 22.0938 22.4766 20.6719 24.2266 20.6719H31.1719C32.9219 20.6719 34.3438 22.0938 34.3438 23.8438V30.7891C34.3438 32.5391 32.9219 33.9609 31.1719 33.9609ZM24.2266 22.5859C23.5703 22.5859 22.9688 23.1328 22.9688 23.8438V30.7891C22.9688 31.4453 23.5156 32.0469 24.2266 32.0469H31.1719C31.8281 32.0469 32.4297 31.5 32.4297 30.7891V23.8438C32.4297 23.1875 31.8828 22.5859 31.1719 22.5859H24.2266Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <h4 class="mb-3 text-xl font-bold text-dark">
+              Improved accuracy
+            </h4>
+            <p class="mb-8 text-body-color lg:mb-11">
+              The AI-powered algorithm generates accurate and relevant prompts, helping users write focused and
+              error-free content. Optimized prompts can include all relevant information and avoid any inaccuracies.
+            </p>
+            <a href="javascript:void(0)" class="text-base font-medium text-body-color hover:text-primary">
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/4">
+          <div class="wow fadeInUp group mb-12 bg-white" data-wow-delay=".25s">
+            <div class="relative z-10 mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+              <span
+                class="absolute top-0 left-0 z-[-1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-2xl bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"></span>
+              <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M29.5312 21.6562L28.6563 21.1641L29.6953 20.5625C30.7344 19.9062 31.3359 18.8125 31.2812 17.6094C31.2266 16.4063 30.625 15.3125 29.5312 14.7109L27.8906 13.7813L29.6406 12.6875C30.6797 12.0313 31.2812 10.9375 31.2266 9.73438C31.1719 8.53125 30.5703 7.4375 29.4766 6.83594L19.25 1.09375C18.2109 0.492187 16.9531 0.546875 15.9141 1.09375L5.41406 7.21875C4.375 7.82031 3.71875 8.91406 3.71875 10.1172C3.71875 11.3203 4.375 12.4141 5.41406 13.0156L7.10938 14L5.41406 14.9844C4.375 15.5859 3.71875 16.6797 3.71875 17.8828C3.71875 19.0859 4.32031 20.1797 5.41406 20.7812L6.39844 21.3281L5.46875 21.875C4.42969 22.4766 3.77344 23.5703 3.77344 24.7734C3.77344 25.9766 4.375 27.0703 5.46875 27.6719L15.9141 33.6875C16.4609 34.0156 17.0078 34.125 17.6094 34.125C18.2109 34.125 18.8125 33.9609 19.3594 33.6328L29.6953 27.2891C30.7344 26.6328 31.3359 25.5391 31.2812 24.3359C31.2266 23.2969 30.625 22.2031 29.5312 21.6562ZM5.63281 10.1172C5.63281 9.57031 5.90625 9.13281 6.34375 8.85938L16.8438 2.78906C17.0625 2.67969 17.3359 2.57031 17.5547 2.57031C17.7734 2.57031 18.0469 2.625 18.2656 2.73437L28.5469 8.47656C28.9844 8.75 29.2578 9.1875 29.3125 9.73438C29.3125 10.2812 29.0391 10.7188 28.6016 10.9922L18.3203 17.3906C17.8828 17.6641 17.2812 17.6641 16.8438 17.3906L6.39844 11.375C5.90625 11.1562 5.63281 10.6641 5.63281 10.1172ZM5.63281 17.9375C5.63281 17.3906 5.90625 16.9531 6.34375 16.6797L9.02344 15.1484L15.8594 19.0859C16.4062 19.4141 16.9531 19.5234 17.5547 19.5234C18.1562 19.5234 18.7578 19.3594 19.3047 19.0312L26.0312 14.875L28.6016 16.2969C29.0391 16.5703 29.3125 17.0078 29.3672 17.5547C29.3672 18.1016 29.0938 18.5391 28.6563 18.8125L18.3203 25.2656C17.8828 25.5391 17.2812 25.5391 16.8438 25.2656L6.39844 19.25C5.90625 18.9766 5.63281 18.4844 5.63281 17.9375ZM28.6563 25.8125L18.3203 32.2109C17.8828 32.4844 17.2812 32.4844 16.8438 32.2109L6.39844 26.1953C5.96094 25.9219 5.6875 25.4844 5.6875 24.9375C5.6875 24.3906 5.96094 23.9531 6.39844 23.6797L8.3125 22.5859L15.8594 26.9609C16.4062 27.2891 16.9531 27.3984 17.5547 27.3984C18.1562 27.3984 18.7578 27.2344 19.3047 26.9062L26.7969 22.2578L28.6563 23.2969C29.0938 23.5703 29.3672 24.0078 29.4219 24.5547C29.3672 25.0469 29.0938 25.5391 28.6563 25.8125Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <h4 class="mb-3 text-xl font-bold text-dark">
+              Enhanced creativity
+            </h4>
+            <p class="mb-8 text-body-color lg:mb-11">
+              The extension enhances creativity by suggesting unique and engaging prompts, breaking writer's block and
+              inspiring new ideas. Optimized prompts can help users come up with new and exciting ideas for their
+              content.
+            </p>
+            <a href="javascript:void(0)" class="text-base font-medium text-body-color hover:text-primary">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Features Section End -->
+
+  <!-- ====== About Section Start -->
+  <section id="about" class="bg-[#f3f4fe] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]">
+    <div class="container">
+      <div class="wow fadeInUp bg-white" data-wow-delay=".2s">
+        <div class="-mx-4 flex flex-wrap">
+          <div class="w-full px-4">
+            <div class="items-center justify-between overflow-hidden border lg:flex">
+              <div
+                class="w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]">
+                <span class="mb-5 inline-block bg-primary py-2 px-5 text-sm font-medium text-white">
+                  About Us
+                </span>
+                <h2 class="mb-6 text-3xl font-bold text-dark sm:text-4xl sm:leading-snug 2xl:text-[40px]">
+                  Why we built PromptGenius
+                </h2>
+                <p class="mb-9 text-base leading-relaxed text-body-color">
+                  As avid users of ChatGPT, we often saw posts on social media platforms like Twitter and LinkedIn that
+                  shared a list of "10 prompts to unleash the true potential of ChatGPT." We would save these posts for
+                  future reference, but when we needed them urgently, we couldn't find them easily. It was frustrating
+                  to spend so much time searching for these prompts when we could be using that time to write
+                  high-quality content.
+                </p>
+                <p class="mb-9 text-base leading-relaxed text-body-color">
+                  That's when we decided to build Prompt Genius, a Chrome extension that allows users to write the
+                  perfect prompt on-the-go using AI inside the ChatGPT page. With Prompt Genius, users can quickly
+                  generate optimized prompts that save them time and effort. No more searching through saved posts or
+                  wasting time brainstorming ideas - Prompt Genius is the solution to all your prompt-related problems.
+                </p>
+                <a href="javascript:void(0)"
+                  class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90 hover:shadow-lg">
+                  Learn More
+                </a>
+              </div>
+              <div class="text-center">
+                <div class="relative z-10 inline-block">
+                  <img src="assets/images/about/twwet2.png" alt="image" class="mx-auto lg:ml-auto" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== About Section End -->
+
+  <!-- ====== Pricing Section Start -->
+  <section id="pricing" class="relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+    <div class="container">
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
+            <span class="mb-2 block text-lg font-semibold text-primary">
+              Pricing Table
+            </span>
+            <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]">
+              Our Pricing Plan
+            </h2>
+            <p class="text-lg leading-relaxed text-body-color sm:text-xl sm:leading-relaxed">
+              Get Started with a One-Time License Purchase and Recharge Your Credits as Needed
+
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center">
+
+        <div class="w-full md:w-1/2 lg:w-1/3">
+          <div
+            class="wow fadeInUp relative z-10 mb-10 overflow-hidden rounded-xl bg-primary bg-gradient-to-b from-primary to-[#179BEE] py-10 px-8 text-center shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
+            data-wow-delay=".1s
+              ">
+            <span
+              class="mb-5 inline-block rounded-full border border-white bg-white py-2 px-6 text-base font-semibold uppercase text-primary">
+              POPULAR
+            </span>
+            <span class="mb-2 block text-base font-medium uppercase text-white">
+              Price
+            </span>
+            <h2 class="text-white text-4xl font-semibold mb-6">
+              $10.00
+              <span class="text-gray-400 text-lg font-normal inline-block ml-2"
+                style="text-decoration: line-through;">$50.00</span>
+            </h2>
+
+
+            <p class="text-white text-xs mb-10">
+              Early Bird Price! Limited Time Offer for Lifetime Access to Our Extension. Don't miss out!
+            </p>
+            <div class="mb-10">
+              <p class="mb-1 text-base font-medium leading-loose text-white">
+                Get free 20 credits after activation
+              </p>
+              <p class="mb-1 text-base font-medium leading-loose text-white">
+                Priority lifetime access
+              </p>
+              <p class="mb-1 text-base font-medium leading-loose text-white">
+                Free updates
+              </p>
+              <p class="mb-1 text-base font-medium leading-loose text-white">
+                Priority support
+              </p>
+            </div>
+            <div class="w-full">
+              <button id="unlockPower"
+                class="inline-block rounded-full border border-white bg-white py-4 px-11 text-center text-base font-medium text-dark transition duration-300 ease-in-out hover:border-dark hover:bg-dark hover:text-white">
+                Unlock the power
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mx-auto" style="max-width: 700px;">
+        <p class="text-sm text-center  leading-relaxed text-body-color sm:text-sm sm:leading-relaxed">
+          PS: Please note that the one-time payment is for the extension only. After using the 20 free credits, you will
+          need to recharge your account with credits to continue using the extension. Each credit equals one prompt
+          generated by AI, which consumes GPU hosting. Unlike other extensions that show static data, our extension uses
+          AI to generate the best possible prompts. A recharge of 100 credits costs $10.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Pricing Section End -->
+
+  <!-- ====== Faq Section Start -->
+  <section id="FAQ" class="relative z-20 overflow-hidden bg-[#f3f4ff] pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+    <div class="container">
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-[60px] max-w-[620px] text-center lg:mb-20">
+            <span class="mb-2 block text-lg font-semibold text-primary">
+              FAQ
+            </span>
+            <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[42px]">
+              Any Questions? Answered
+            </h2>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4 lg:w-1/2">
+          <div class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
+            data-wow-delay=".1s
+              ">
+            <button class="faq-btn flex w-full items-center text-left">
+              <div
+                class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
+                <svg width="17" height="10" viewBox="0 0 17 10" class="icon fill-current">
+                  <path
+                    d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
+                    fill="#3056D3" stroke="#3056D3" />
+                </svg>
+              </div>
+              <div class="w-full">
+                <h4 class="text-base font-semibold text-black sm:text-lg">
+                  Are the prompts generated by PromptGenius optimized for best results?
+                </h4>
+              </div>
+            </button>
+            <div class="faq-content hidden pl-[62px]">
+              <p class="py-3 text-base leading-relaxed text-body-color">
+                Yes, the prompts generated by PromptGenius are optimized for best results. The platform's advanced AI
+                and NLP algorithms analyze the user's writing style and preferences to generate customized prompts that
+                are tailored to the user's needs and goals.
+
+
+              </p>
+            </div>
+          </div>
+          <div class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
+            data-wow-delay=".15s
+              ">
+            <button class="faq-btn flex w-full items-center text-left">
+              <div
+                class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
+                <svg width="17" height="10" viewBox="0 0 17 10" class="icon fill-current">
+                  <path
+                    d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
+                    fill="#3056D3" stroke="#3056D3" />
+                </svg>
+              </div>
+              <div class="w-full">
+                <h4 class="text-base font-semibold text-black sm:text-lg">
+                  Can the prompts generated by PromptGenius be of any type, such as for SEO or brainstorming?
+                </h4>
+              </div>
+            </button>
+            <div class="faq-content hidden pl-[62px]">
+              <p class="py-3 text-base leading-relaxed text-body-color">
+                Yes, PromptGenius can generate prompts for a wide range of writing tasks, including SEO writing,
+                brainstorming, and more. The platform's AI-powered algorithms analyze the user's writing style and
+                preferences to generate customized prompts that are relevant and engaging.
+            </div>
+          </div>
+          <div class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
+            data-wow-delay=".2s
+              ">
+            <button class="faq-btn flex w-full items-center text-left">
+              <div
+                class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
+                <svg width="17" height="10" viewBox="0 0 17 10" class="icon fill-current">
+                  <path
+                    d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
+                    fill="#3056D3" stroke="#3056D3" />
+                </svg>
+              </div>
+              <div class="w-full">
+                <h4 class="text-base font-semibold text-black sm:text-lg">
+                  Do I need to activate PromptGenius with a license?
+                </h4>
+              </div>
+            </button>
+            <div class="faq-content hidden pl-[62px]">
+              <p class="py-3 text-base leading-relaxed text-body-color">
+                Yes, a license is required to activate PromptGenius. Once you activate the product, you will receive 20
+                free credits to try it out. After that, you can recharge your credits with $10 for 100 credits, where 1
+                credit equals 1 prompt.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 lg:w-1/2">
+          <div class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
+            data-wow-delay=".1s
+              ">
+            <button class="faq-btn flex w-full items-center text-left">
+              <div
+                class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
+                <svg width="17" height="10" viewBox="0 0 17 10" class="icon fill-current">
+                  <path
+                    d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
+                    fill="#3056D3" stroke="#3056D3" />
+                </svg>
+              </div>
+              <div class="w-full">
+                <h4 class="text-base font-semibold text-black sm:text-lg">
+                  What is the technology behind PromptGenius?
+                </h4>
+              </div>
+            </button>
+            <div class="faq-content hidden pl-[62px]">
+              <p class="py-3 text-base leading-relaxed text-body-color">
+                PromptGenius is powered by advanced AI and natural language processing (NLP) algorithms that analyze the
+                user's writing style and preferences to generate personalized prompts.
+
+
+              </p>
+            </div>
+          </div>
+          <div class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
+            data-wow-delay=".15s
+              ">
+            <button class="faq-btn flex w-full items-center text-left">
+              <div
+                class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
+                <svg width="17" height="10" viewBox="0 0 17 10" class="icon fill-current">
+                  <path
+                    d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
+                    fill="#3056D3" stroke="#3056D3" />
+                </svg>
+              </div>
+              <div class="w-full">
+                <h4 class="text-base font-semibold text-black sm:text-lg">
+                  Is there a refund policy for PromptGenius?
+                </h4>
+              </div>
+            </button>
+            <div class="faq-content hidden pl-[62px]">
+              <p class="py-3 text-base leading-relaxed text-body-color">
+                PromptGenius does not offer refunds, but the platform offers a satisfaction guarantee. If you encounter
+                any issues or have any concerns, the PromptGenius team will work with you to resolve the problem and
+                ensure your satisfaction.
+              </p>
+            </div>
+          </div>
+          <div class="single-faq wow fadeInUp mb-8 w-full rounded-lg border border-[#F3F4FE] bg-white p-5 sm:p-8"
+            data-wow-delay=".2s
+              ">
+            <button class="faq-btn flex w-full items-center text-left">
+              <div
+                class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary bg-opacity-5 text-primary">
+                <svg width="17" height="10" viewBox="0 0 17 10" class="icon fill-current">
+                  <path
+                    d="M7.28687 8.43257L7.28679 8.43265L7.29496 8.43985C7.62576 8.73124 8.02464 8.86001 8.41472 8.86001C8.83092 8.86001 9.22376 8.69083 9.53447 8.41713L9.53454 8.41721L9.54184 8.41052L15.7631 2.70784L15.7691 2.70231L15.7749 2.69659C16.0981 2.38028 16.1985 1.80579 15.7981 1.41393C15.4803 1.1028 14.9167 1.00854 14.5249 1.38489L8.41472 7.00806L2.29995 1.38063L2.29151 1.37286L2.28271 1.36548C1.93092 1.07036 1.38469 1.06804 1.03129 1.41393L1.01755 1.42738L1.00488 1.44184C0.69687 1.79355 0.695778 2.34549 1.0545 2.69659L1.05999 2.70196L1.06565 2.70717L7.28687 8.43257Z"
+                    fill="#3056D3" stroke="#3056D3" />
+                </svg>
+              </div>
+              <div class="w-full">
+                <h4 class="text-base font-semibold text-black sm:text-lg">
+                  Can non-technical users use PromptGenius?
+                </h4>
+              </div>
+            </button>
+            <div class="faq-content hidden pl-[62px]">
+              <p class="py-3 text-base leading-relaxed text-body-color">
+                Yes, PromptGenius is designed to be user-friendly and easy to use for non-technical users. The extension
+                has a simple and intuitive interface, and the prompts are generated automatically, so there's no need
+                for any technical knowledge or expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 right-0 z-[-1]">
+      <svg width="1440" height="886" viewBox="0 0 1440 886" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.5"
+          d="M193.307 -273.321L1480.87 1014.24L1121.85 1373.26C1121.85 1373.26 731.745 983.231 478.513 729.927C225.976 477.317 -165.714 85.6993 -165.714 85.6993L193.307 -273.321Z"
+          fill="url(#paint0_linear)" />
+        <defs>
+          <linearGradient id="paint0_linear" x1="1308.65" y1="1142.58" x2="602.827" y2="-418.681"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#3056D3" stop-opacity="0.36" />
+            <stop offset="1" stop-color="#F5F2FD" stop-opacity="0" />
+            <stop offset="1" stop-color="#F5F2FD" stop-opacity="0.096144" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </section>
+  <!-- ====== Faq Section End -->
+
+
+  <!-- ====== Contact Start ====== -->
+  <section id="contact" class="relative py-20 md:py-[120px]">
+    <div class="absolute top-0 left-0 z-[-1] h-1/2 w-full bg-[#f3f4fe] lg:h-[45%] xl:h-1/2"></div>
+    <div class="container px-4">
+      <div class="-mx-4 flex flex-wrap items-center">
+        <div class="w-full px-4 lg:w-7/12 xl:w-8/12">
+          <div class="ud-contact-content-wrapper">
+            <div class="ud-contact-title mb-12 lg:mb-[150px]">
+              <span class="mb-5 text-base font-semibold text-dark">
+                CONTACT US
+              </span>
+              <h2 class="text-[35px] font-semibold">
+                Let's talk about <br />
+                Love to hear from you!
+              </h2>
+            </div>
+            <div class="mb-12 flex flex-wrap justify-between lg:mb-0">
+              <div class="mb-8 flex w-[330px] max-w-full">
+                <div class="mr-6 text-[32px] text-primary">
+                  <svg width="29" height="35" viewBox="0 0 29 35" class="fill-current">
+                    <path
+                      d="M14.5 0.710938C6.89844 0.710938 0.664062 6.72656 0.664062 14.0547C0.664062 19.9062 9.03125 29.5859 12.6406 33.5234C13.1328 34.0703 13.7891 34.3437 14.5 34.3437C15.2109 34.3437 15.8672 34.0703 16.3594 33.5234C19.9688 29.6406 28.3359 19.9062 28.3359 14.0547C28.3359 6.67188 22.1016 0.710938 14.5 0.710938ZM14.9375 32.2109C14.6641 32.4844 14.2812 32.4844 14.0625 32.2109C11.3828 29.3125 2.57812 19.3594 2.57812 14.0547C2.57812 7.71094 7.9375 2.625 14.5 2.625C21.0625 2.625 26.4219 7.76562 26.4219 14.0547C26.4219 19.3594 17.6172 29.2578 14.9375 32.2109Z" />
+                    <path
+                      d="M14.5 8.58594C11.2734 8.58594 8.59375 11.2109 8.59375 14.4922C8.59375 17.7188 11.2187 20.3984 14.5 20.3984C17.7812 20.3984 20.4062 17.7734 20.4062 14.4922C20.4062 11.2109 17.7266 8.58594 14.5 8.58594ZM14.5 18.4297C12.3125 18.4297 10.5078 16.625 10.5078 14.4375C10.5078 12.25 12.3125 10.4453 14.5 10.4453C16.6875 10.4453 18.4922 12.25 18.4922 14.4375C18.4922 16.625 16.6875 18.4297 14.5 18.4297Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 class="mb-6 text-lg font-semibold">Our Location</h5>
+                  <p class="text-base text-body-color">
+                    Hyderabad,India
+                  </p>
+                </div>
+              </div>
+              <div class="mb-8 flex w-[330px] max-w-full">
+                <div class="mr-6 text-[32px] text-primary">
+                  <svg width="34" height="25" viewBox="0 0 34 25" class="fill-current">
+                    <path
+                      d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 class="mb-6 text-lg font-semibold">How Can We Help?</h5>
+                  <p class="text-base text-body-color">Shammir@the-promptgenius.com</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 lg:w-5/12 xl:w-4/12">
+          <div
+            class="wow fadeInUp rounded-lg bg-white py-10 px-8 shadow-testimonial sm:py-12 sm:px-10 md:p-[60px] lg:p-10 lg:py-12 lg:px-10 2xl:p-[60px]"
+            data-wow-delay=".2s
+              ">
+            <h3 class="mb-8 text-2xl font-semibold md:text-[26px]">
+              Send us a Message
+            </h3>
+            <form method="post" autocomplete="off" name="google-sheet">
+              <div class="mb-6">
+                <label for="fullName" class="block text-xs text-dark">Full Name*</label>
+                <input type="text" name="fullName" placeholder="Adam Gelius"
+                  class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none" />
+              </div>
+              <div class="mb-6">
+                <label for="email" class="block text-xs text-dark">Email*</label>
+                <input type="email" name="email" placeholder="example@yourmail.com"
+                  class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none" />
+              </div>
+              <div class="mb-6">
+                <label for="phone" class="block text-xs text-dark">Phone*</label>
+                <input type="text" name="phone" placeholder="+885 1254 5211 552"
+                  class="w-full border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none" />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-xs text-dark">Message*</label>
+                <textarea name="message" rows="1" placeholder="type your message here"
+                  class="w-full resize-none border-0 border-b border-[#f1f1f1] py-4 focus:border-primary focus:outline-none"></textarea>
+              </div>
+              <div class="mb-0">
+                <input type="submit"
+                  class="inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-dark">
+                </input>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ====== Contact End ====== -->
+
+  <footer class="bg-white dark:bg-gray-800">
+    <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+
+
+      <div class="text-center">
+        <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+          <img style="width:200px;" src="./assets/images/logo/white_bg_logo.png" class="h-6 mr-3 sm:h-9"
+            alt="Nocode Plugins Logo" />
+
+        </a>
+        <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2022-2023 PromptGenius™. All Rights
+          Reserved.
+        </span>
+        <ul class="flex justify-center items-center mt-5 space-x-5">
+          <p class="text-sm text-gray-500">Developed by Shammir :</p>
+          <li>
+            <a href="https://twitter.com/ShammirBaig"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path
+                  d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z">
+                </path>
+              </svg></a>
+          </li>
+          <li>
+            <a href="https://github.com/shammirbaig"
+              class="ml-2 text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path
+                  d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z">
+                </path>
+              </svg> </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- ====== Footer Section End -->
+
+  <!-- ====== Back To Top Start -->
+  <a href="javascript:void(0)"
+    class="back-to-top fixed bottom-8 right-8 left-auto z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-dark">
+    <span class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"></span>
+  </a>
+  <!-- ====== Back To Top End -->
+
+  <!-- ====== All Scripts -->
+
+  <script src="./assets/js/main.js"></script>
+  <script defer src="./assets/js/backend.js"></script>
+  <script>
+    // ==== for menu scroll
+    const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+    pageLink.forEach((elem) => {
+      elem.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(elem.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+          offsetTop: 1 - 60,
         });
       });
+    });
 
-      // section menu active
-      function onScroll(event) {
-        const sections = document.querySelectorAll(".ud-menu-scroll");
-        const scrollPos =
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop;
+    // section menu active
+    function onScroll(event) {
+      const sections = document.querySelectorAll(".ud-menu-scroll");
+      const scrollPos =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
 
-        for (let i = 0; i < sections.length; i++) {
-          const currLink = sections[i];
-          const val = currLink.getAttribute("href");
-          const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
-          if (
-            refElement.offsetTop <= scrollTopMinus &&
-            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-          ) {
-            document
-              .querySelector(".ud-menu-scroll")
-              .classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
+      for (let i = 0; i < sections.length; i++) {
+        const currLink = sections[i];
+        const val = currLink.getAttribute("href");
+        const refElement = document.querySelector(val);
+        const scrollTopMinus = scrollPos + 73;
+        if (
+          refElement.offsetTop <= scrollTopMinus &&
+          refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+        ) {
+          document
+            .querySelector(".ud-menu-scroll")
+            .classList.remove("active");
+          currLink.classList.add("active");
+        } else {
+          currLink.classList.remove("active");
         }
       }
+    }
 
-      window.document.addEventListener("scroll", onScroll);
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF30E52FFG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-RF30E52FFG');
-    </script>
-  </body>
+    window.document.addEventListener("scroll", onScroll);
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF30E52FFG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RF30E52FFG');
+  </script>
+</body>
+
 </html>

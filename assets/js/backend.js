@@ -1,5 +1,4 @@
-const button = document.getElementById("checkout-button")
-button.addEventListener("click", () => {
+function handleButtonClick() {
   fetch("https://promptgenius-backend.onrender.com/create-checkout-session", {
     method: "POST",
     headers: {
@@ -12,19 +11,23 @@ button.addEventListener("click", () => {
       ],
     }),
   })
-    .then(res => {
-      if (res.ok) return res.json()
-      return res.json().then(json => Promise.reject(json))
+    .then((res) => {
+      if (res.ok) return res.json();
+      return res.json().then((json) => Promise.reject(json));
     })
     .then(({ url }) => {
-      window.location = url
+      window.location = url;
     })
-    .catch(e => {
-      console.error(e.error)
-    })
-})
+    .catch((e) => {
+      console.error(e.error);
+    });
+}
 
+const button = document.getElementById("checkout-button");
+const unlockButton = document.getElementById("unlockPower");
 
+button.addEventListener("click", handleButtonClick);
+unlockButton.addEventListener("click", handleButtonClick);
 
 
 
